@@ -1,4 +1,7 @@
 
+dist:
+	R --vanilla --slave --file=dist.r
+
 analysis:
 	R --vanilla --slave --file=analysis.r
 
