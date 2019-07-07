@@ -8,11 +8,24 @@ https://drive.google.com/a/semmle.com/file/d/1Wo7cfA5_nwml4lqrZWMhTWY7W8a-Xq_6/v
 
 ## Getting Started Guide
 
+The scripts uses different tools and languages.
+
 ### Dependencies
 
 * make, tar
 * python
-* r
+* R
+
+To run the R scripts, the following packages are needed to be installed:
+
+```R
+install.packages("DBI")
+install.packages("RSQLite")
+install.packages("ggplot2")
+install.packages("tidyr")
+install.packages("plyr")
+install.packages("reshape2")
+```
 
 ## Step by Step Instructions
 
