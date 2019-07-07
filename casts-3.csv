@@ -1,0 +1,4 @@
+"castid","repoid","target","source","qltag","link","value"
+"7782179",6842,"XmlBoolean","TypeStoreUser","ClassFamily","https://lgtm.com/projects/g/apache/poi/snapshot/dist-1790760597-1524814812150/files/build/xmlbean-sources/org/openxmlformats/schemas/spreadsheetml/x2006/main/impl/CTFilterColumnImpl.java?#L743","#LookupById,@gen"
+"3421828",3540,"WsdlType","XmlObject","ClassFamily","https://lgtm.com/projects/g/SmartBear/soapui/snapshot/dist-1793321538-1524814812150/files/soapui/target/generated-sources/xmlbeans/com/sun/java/xml/ns/jaxRpc/ri/config/WsdlType.java?#L185","#Deserialization,@gen"
+"2352428",2229,"LocalVariableNode","Node","RefCast","https://lgtm.com/projects/g/google/error-prone/snapshot/dist-27820007-1524814812150/files/check_api/src/main/java/com/google/errorprone/dataflow/nullnesspropagation/NullnessPropagationTransfer.java?#L409","#GuardByInstanceOf:single,@src"

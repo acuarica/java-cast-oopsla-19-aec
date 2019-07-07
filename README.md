@@ -34,8 +34,16 @@ make import
 python import.py
 1 Importing ./query-results/gitlab/sebastianbauersfeld/commons-io-gitlab/1506231257083:1506221246512:3251173281933460169/output.csv dist-1506221246512-1524814812150
 2 Importing ./query-results/gitlab/fdroid/fdroidclient/1506231257083:1506169596183:2359306719844906717/output.csv dist-1506169596183-1524814812150
-3 Importing ./query-results/github/Kuvaldis/playground/1506231257083:1505765346197:3190877618806210603/output.csv dist-1505765346197-1524814812150
-4 Importing ./query-results/github/ManuelB/facebook-recommender-demo/1506231257083:45150017:3295913788698196517/output.csv dist-45150017-1524814812150
-5 Importing ./query-results/github/sd6352051/NiftyNotification/1506231257083:2032380230:2834292473977066734/output.csv dist-2032380230-1524814812150
 [...]
+7558 Importing ./query-results/bitbucket/AndrewSwan_au/bgg4j/1506231257083:1290503729:2893971791070855794/output.csv dist-1290503729-1524814812150
+7559 Importing ./query-results/bitbucket/outofcoffee/api-blueprint-mockserver/1506231257083:1280732355:2933174477644986629/output.csv dist-1280732355-1524814812150
+Total files/repos imported: 7559
+Total casts rows imported: 10193435
+Total nonSnapshots: 215
+```
+
+### Creating sample table
+
+```sh
+make sample
 ```

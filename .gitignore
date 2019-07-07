@@ -1,2 +1,4 @@
 /query-results/
 /output.sqlite3
+/*.pdf
+/patterns/*.pdf
