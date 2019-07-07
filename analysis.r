@@ -2,7 +2,6 @@ library(tidyr)
 library(plyr)
 library(reshape2)
 library(ggplot2)
-library(UpSetR)
 
 taxonomy = list(
   'Typecase' = list(
@@ -404,10 +403,3 @@ patterns.def['CmarkPerc'] = perc(patterns.def$CmarkCount, patterns.def$Pattern)
 patterns.def['XmarkPerc'] = perc(patterns.def$XmarkCount, patterns.def$Pattern)
 
 write.def(patterns.def, casts.def, 'casts.def')
-
-# df.equals <- subset(df, df$features=='Equals')
-# df.wide <- dcast(df.equals, castid~args, length, value.var="args")
-# df.wide <- dcast(df, castid~features, length)
-# #upset(df.wide,nsets=ncol(df.wide),nintersects=NA,mb.ratio = c(0.3, 0.7))
-# upset(df.wide,nsets=ncol(df.wide) )
-#upset(df.wide)
