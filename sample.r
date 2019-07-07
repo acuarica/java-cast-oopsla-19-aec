@@ -1,5 +1,5 @@
 
-library("DBI")
+library(DBI)
 library(RSQLite)
 library(reshape2)
 library(ggplot2)
