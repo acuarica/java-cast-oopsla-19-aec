@@ -2,8 +2,8 @@
 # Casting about in the Dark - Artifact Evaluation for OOPSLA'19
 
 Our paper is an empirical study about how developers use casting in Java.
-We have manually inspected and categorized 5000 cast operations.
-This artifact provides the cast categorization with the appropriate scripts to make the plots we have used in the paper.
+We have manually inspected and categorized 5,000 cast operations.
+This artifact provides the cast categorization we have used in the paper.
 Moreover, this artifact provides an Overview, the Getting Started Guide and the Step by Step Instructions on how to extract a sample from our cast dataset.
 
 A note about *consistency*.
@@ -33,13 +33,13 @@ we decided that a source code control repository would be a more appropriate to 
 The root folder contains the following files:
 
 * `Makefile`: The Makefile script to run all commands described in the *Step by Step Instructions*.
-* `query-results.tar.xz` and `query-results.json`: The dataset with casts can be found online as well. This is the dataset provided directly by Semmle. The `query-results.tar.xz` can be found [online](https://drive.google.com/a/semmle.com/file/d/1Wo7cfA5_nwml4lqrZWMhTWY7W8a-Xq_6/view?usp=drive_web).
-* `casts-*.csv`: The samples that have been manually inspected.
+* `query-results.tar.xz` and `query-results.json`: This is the dataset provided directly by Semmle. The `query-results.tar.xz` can be found [online](https://drive.google.com/a/semmle.com/file/d/1Wo7cfA5_nwml4lqrZWMhTWY7W8a-Xq_6/view?usp=drive_web).
+* `casts-*.csv`: The cast samples that have been manually inspected.
 * `casts.csv`: Consolidated casts from `casts-*.csv`.
-* `sample-casts-5000`: A sample output of casts.
+* `sample-casts-5000.csv`: A random sample output of casts.
 * `import.py`: Script to extract the cast instances into a SQLite database.
 * `sample.r`: Script to create a sample from the cast database.
-* `analysis.r`: Main script to make the plot shown in the paper.
+* `analysis.r`: Main script to make tables and plots.
 * `dist.r`: Script to make the cast distribution plots.
 * `casts.def`: Statistics about patterns.
 * `input-patterns.def`: LaTeX include file to include each pattern sorted by frequency.
@@ -70,7 +70,7 @@ install.packages("plyr")
 install.packages("reshape2")
 ```
 
-The scripts in the following section were tested on macOS.
+The scripts in the following section were tested on macOS (10.14) and Linux (Mint 19.1 64-bit).
 
 ## Step by Step Instructions
 
@@ -114,6 +114,10 @@ make import
 The database `output.sqlite3` should be created.
 
 ### Creating sample table
+
+This step shows how to create a random sample from the cast population.
+Once the sample is created,
+we have manually annotated each row with the result of the manual inspection.
 
 ```sh
 make sample
@@ -170,6 +174,9 @@ The plots were asked by the reviewers to show how the sample is distributed in A
 
 As mentioned in the Overview,
 the reviewers asked us to show the distribution of casts across projects.
+In particular, they want to know whether casts are mostly clustered within a small number of projects or are distributed relatively evenly across projects.
+To that end,
+we provide a plot whose *x* axis is the number of casts (in log scale) and whose *y* axis is density of projects with *x* or fewer casts.
 
 The following command does so.
 
@@ -180,3 +187,4 @@ make dist
 *Expected output*
 
 The `dist-population.pdf` and `dist-csv.pdf` plots should be created.
+The *x* axis represents the no. of casts (in log scale) and the *y* axis represents the empirical cumulative density of no. of projects.
