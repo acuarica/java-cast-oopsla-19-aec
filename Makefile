@@ -17,3 +17,6 @@ untar:
 clean:
 	find . -name "*.pdf" -print -delete
 	find . -name "*.def" -print -delete
+
+overview:
+	pandoc README.md --pdf-engine=pdflatex -o README.pdf
