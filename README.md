@@ -187,4 +187,5 @@ make dist
 *Expected output*
 
 The `dist-population.pdf` and `dist-csv.pdf` plots should be created.
-The *x* axis represents the no. of casts (in log scale) and the *y* axis represents the empirical cumulative density of no. of projects.
+The `dist-population.pdf` uses the total population of casts,
+and `dist-csv.pdf` uses the cast sample we manually inspected.
