@@ -362,7 +362,7 @@ for (p in names(tb[order(tb, decreasing = TRUE)])) {
 }
 write(table.def, 'table-casts-patterns.def')
 write(input.patterns.def, 'input-patterns.def')
-# write(table.categories.def, 'table-casts-categories.def')
+write(table.categories.def, 'table-casts-categories.def')
 
 pp <- ggplot(df, aes(x=pattern))+
   geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
