@@ -13,7 +13,7 @@ write.plot <- function(pp, path) {
 
 con = dbConnect(SQLite(), dbname="output.sqlite3")
 reposid = dbGetQuery(con, "select repoid from repos")
-df.1 = dbGetQuery(con, "select repoid, count(*) as nocasts from casts group by repoid")
+df.1 = dbGetQuery(con, "select repoid, count(*) as nocasts from casts where link!='' group by repoid")
 reposWithNoCasts <- setdiff(reposid$repoid, df.1$repoid)
 df.2 <- data.frame(repoid=reposWithNoCasts, nocasts=rep(0, length(reposWithNoCasts)) )
 
