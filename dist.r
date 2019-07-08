@@ -6,7 +6,7 @@ library(ggplot2)
 
 write.plot <- function(pp, path) {
   cat("[Writing plot '", path, "']\n", sep='')
-  pdf(path)
+  pdf(path, height=4)
   print(pp)
   dev.off()
 }
@@ -26,8 +26,10 @@ if (sum(df.count$nocasts) != nrow(df)) stop("sum: ", sum(df.count$nocasts), " !=
 csv <- read.csv('casts.csv')
 csv.count <- dcast(csv, repoid~'nocasts', length, value.var='castid')
 
-pp <- ggplot(df.count, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+scale_x_log10()
+labs <- labs(x="No. of Casts (log scale)", y="Empirical Cumulative Density of no. of projects")
+
+pp <- ggplot(df.count, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+scale_x_log10()+labs
 write.plot(pp, 'dist-population.pdf')
 
-pp <- ggplot(csv.count, aes(nocasts))+stat_ecdf(geom="point", size=0.5)+scale_x_log10()
+pp <- ggplot(csv.count, aes(nocasts))+stat_ecdf(geom="point", size=0.5)+scale_x_log10()+labs
 write.plot(pp, 'dist-csv.pdf')
