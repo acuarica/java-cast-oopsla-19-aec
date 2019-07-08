@@ -13,15 +13,11 @@ write.plot <- function(pp, path) {
 
 con = dbConnect(SQLite(), dbname="output.sqlite3")
 reposid = dbGetQuery(con, "select repoid from repos")
-df = dbGetQuery(con, "select * from casts")
-df$castid <- rownames(df)
-reposWithNoCasts <- setdiff(reposid$repoid, df$repoid)
-
-df.1 <- dcast(df, repoid~'nocasts', length, value.var='castid')
+df.1 = dbGetQuery(con, "select repoid, count(*) as nocasts from casts group by repoid")
+reposWithNoCasts <- setdiff(reposid$repoid, df.1$repoid)
 df.2 <- data.frame(repoid=reposWithNoCasts, nocasts=rep(0, length(reposWithNoCasts)) )
 
 df.count <- merge(df.1 ,df.2, all=TRUE)
-if (sum(df.count$nocasts) != nrow(df)) stop("sum: ", sum(df.count$nocasts), " != casts: ", nrow(df))
 
 csv <- read.csv('casts.csv')
 csv.count <- dcast(csv, repoid~'nocasts', length, value.var='castid')
