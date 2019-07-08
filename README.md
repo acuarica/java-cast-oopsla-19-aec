@@ -44,6 +44,7 @@ The root folder contains the following files:
 * `casts.def`: Statistics about patterns.
 * `input-patterns.def`: LaTeX include file to include each pattern sorted by frequency.
 * `table-casts-patterns.def`: Patterns table where patterns are sorted by frequency.
+* `table-patterns.pdf` and `patterns/*.pdf`: Generated plots by `analysis.r`
 
 The `*.def` files are automatically generated files by the `analysis.r` script in LaTeX format to be included directly in the source of the paper.
 
@@ -153,6 +154,9 @@ make analysis
 ```
 
 *Expected output*
+
+This script creates the `table-patterns.pdf` and `patterns/*.pdf` plots.
+The `table-patterns.pdf` is the main plot used in the paper.
 
 ### Distribution of casts
 
