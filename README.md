@@ -4,20 +4,23 @@
 Our paper is an empirical study about how developers use casting in Java.
 We have manually inspected and categorized 5000 cast operations.
 This artifact provides the cast categorization with the appropriate scripts to make the plots we have used in the paper.
-Moreover, this artifact provides an Overview, a Getting Started Guide and Step by Step on how to extract a sample from our cast dataset.
+Moreover, this artifact provides an Overview, the Getting Started Guide and the Step by Step Instructions on how to extract a sample from our cast dataset.
 
 A note about *consistency*.
 This artifact differs in *three* ways with the *submitted* paper.
-The first two reasons are because of 
 
-1. More patterns. The reviewers pointed out that some patterns were too big. Thus, we had to split them in new pattern.
-In section ? we describe which are the new patterns.
-2. Distribution of casts, there is a new step. We plan to incorporate these new results into the final version of the paper.
-3. 
-
-Because of 
-
-[Distribution of Casts](#distribution-of-casts)
+1. The reviewers pointed out that some cast instances were clustered together,
+when they should be categorized as different patterns.
+Thus, we had to split some patterns into new ones.
+In Section [Manual Categorization of Casts](#manual-categorization-of-casts) we describe which are the new patterns,
+and which ones were removed.
+2. Additionally,
+the reviewers mentioned that it is important to know the distribution of casts per projects.
+In Section [Distribution of Casts](#distribution-of-casts) we provide the steps to gather the cast distribution.
+We plan to incorporate these new results into the final version of the paper.
+3. Finally, to satisfy the methodology described in Section 2.2 of the paper,
+we had to effectively analyzed 5,000 casts.
+This improvement is described in Section [Manual Categorization of Casts](#manual-categorization-of-casts).
 
 ## Overview
 
@@ -38,6 +41,11 @@ The root folder contains the following files:
 * `sample.r`: Script to create a sample from the cast database.
 * `analysis.r`: Main script to make the plot shown in the paper.
 * `dist.r`: Script to make the cast distribution plots.
+* `casts.def`: Statistics about patterns.
+* `input-patterns.def`: LaTeX include file to include each pattern sorted by frequency.
+* `table-casts-patterns.def`: Patterns table where patterns are sorted by frequency.
+
+The `*.def` files are automatically generated files by the `analysis.r` script in LaTeX format to be included directly in the source of the paper.
 
 ## Getting Started Guide
 
@@ -112,7 +120,7 @@ make sample
 
 The sample file `sample-casts-5000.csv` should be created.
 
-### Manual categorization of cast samples
+### Manual categorization of casts
 
 The manual categorization tables are `casts-5000.csv`, `casts-480.csv`, `casts-47.csv` and `casts-3.csv`.
 A consolidated table made can be found in `casts.csv`.
@@ -144,8 +152,12 @@ To run the analysis, run the following command:
 make analysis
 ```
 
+*Expected output*
+
 ### Distribution of casts
 
 ```sh
 make dist
 ```
+
+*Expected output*
