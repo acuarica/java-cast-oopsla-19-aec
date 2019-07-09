@@ -151,6 +151,55 @@ When resampling, we took care of inspecting *different* cast instances,
 i.e., we have discarded duplicated casts.
 We found 3 duplicated casts when resampling.
 
+The manual inspection (*value* column) is a string with the following format:
+
+```text
+(#(%variant)(:%args)?)+,@(src|test|gen)|?BrokenLink|?Duplicated|?Bug
+```
+
+where `%variant` is a declared variant of a pattern (see table below) and `%args` is a free string (optional) used to make a comment on a cast.
+The `@` symbol indicates the scope of the cast: `src` is used to indicate that the cast appears in application/library code, `test` for test code,
+and `gen` for generated code.
+The markers `?BrokenLink`, `?Duplicated`, and `?Bug` indicate whether the link of the cast is broken, the link was duplicated, or the cast is a bug respectively.
+
+The full list of possible `%variant`s is given by the *Variant* column.
+The pattern for which a variant belongs to is given by the *Pattern* column.
+
+| Pattern | Variant |
+|---------|---------|
+| Typecase | GuardByInstanceOf, GuardByTypeTag, GuardByClassLiteral |
+| Equals | Equals |
+| OperandStack | OperandStack |
+| Family | Family |
+| Factory | Factory, GetOrCreateByClassLiteral |
+| Deserialization | Deserialization |
+| Composite | Composite |
+| NewDynamicInstance | NewDynamicInstance |
+| Stash | LookupById, Tag, StaticResource |
+| CovariantReturnType | CovariantReturnType, Clone |
+| Redundant | Redundant |
+| VariableSupertype | VariableSupertype |
+| UseRawType | UseRawType |
+| RemoveWildcard | RemoveWildcard |
+| KnownReturnType | KnownReturnType |
+| ObjectAsArray | ObjectAsArray |
+| AccessSuperclassField | AccessSuperclassField |
+| SelectOverload | SelectOverload |
+| ReflectiveAccessibility | ReflectiveAccessibility |
+| CovariantGeneric | CovariantGeneric |
+| SoleSubclassImplementation | SoleSubclassImplementation |
+| FluentAPI | FluentAPI |
+| ImplicitIntersectionType | ImplicitIntersectionType |
+| GenericArray | GenericArray, MatchBoxedType |
+| UnoccupiedTypeParameter | UnoccupiedTypeParameter |
+
+For example,
+the value `#LookupById,@test` indicates that the cast exhibits the *LookupById* variant, in the *Stash* pattern,
+and the cast appears in test code.
+As an example with arguments,
+the value `#GuardByInstanceOf:single,@src` indicates the *GuardByInstanceOf*, in the *Typecase* pattern, marked as *single*,
+and the cast appears in application or library code.
+
 In the submitted paper we had 23 usage patterns.
 We now have 25 usage patterns.
 This is because of we have split *IncompleteGenericType* into *UseRawType* and *RemoveWildcard*,
