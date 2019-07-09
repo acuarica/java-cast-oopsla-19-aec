@@ -197,7 +197,7 @@ For example,
 the value `#LookupById,@test` indicates that the cast exhibits the *LookupById* variant, in the *Stash* pattern,
 and the cast appears in test code.
 As an example with arguments,
-the value `#GuardByInstanceOf:single,@src` indicates the *GuardByInstanceOf*, in the *Typecase* pattern, marked as *single*,
+the value `#GuardByInstanceOf:single,@src` indicates the *GuardByInstanceOf* variant, in the *Typecase* pattern, marked as *single*,
 and the cast appears in application or library code.
 
 In the submitted paper we had 23 usage patterns.
