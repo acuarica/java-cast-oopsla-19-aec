@@ -36,7 +36,6 @@ The root folder contains the following files:
 * `query-results.tar.xz` and `query-results.json`: This is the dataset provided directly by Semmle. The `query-results.tar.xz` can be found [online](https://drive.google.com/a/semmle.com/file/d/1Wo7cfA5_nwml4lqrZWMhTWY7W8a-Xq_6/view?usp=drive_web).
 * `casts-*.csv`: The cast samples that have been manually inspected.
 * `casts.csv`: Consolidated casts from `casts-*.csv`.
-* `sample-casts-5000.csv`: A random sample output of casts.
 * `import.py`: Script to extract the cast instances into a SQLite database.
 * `sample.r`: Script to create a sample from the cast database.
 * `analysis.r`: Main script to make tables and plots.
@@ -125,7 +124,7 @@ make sample
 
 *Expected output*
 
-The sample file `sample-casts-5000.csv` should be created.
+A random sample of casts, the file `sample-casts-5000.csv`, should be created.
 
 ### Manual categorization of casts
 
@@ -204,6 +203,9 @@ In the submitted paper we had 23 usage patterns.
 We now have 25 usage patterns.
 This is because of we have split *IncompleteGenericType* into *UseRawType* and *RemoveWildcard*,
 and we extracted the *Equals* patterns from *Typecase*.
+We were able to merge, and later split,
+patterns because for each cast we keep track of its variant (shown in the table below).
+Merging and spliting patterns requires just changing the mapping of variants to patterns.
 
 The script to process the results of the manual inspection is `analysis.r`.
 To run the analysis, run the following command:
@@ -218,6 +220,10 @@ This script creates the `table-patterns.pdf` and `patterns/*.pdf` plots,
 and `casts.def`, `input-patterns.def`, and `table-casts-patterns.def` to be included in source paper.
 The `table-casts-patterns.def` is the main table shown in Section 4 of the paper.
 The plots were asked by the reviewers to show how the sample is distributed in Application/Library code, Test code, and Generated code.
+The plots in the `patterns` folder uses either the format `table-pattern-%pattern-features.pdf` or
+`table-pattern-%pattern-%variant-args.pdf`.
+The former shows the frequencies of variants within a pattern,
+while the latter shows all arguments within a variant.
 
 ### Distribution of casts
 
