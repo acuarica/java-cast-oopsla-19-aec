@@ -212,7 +212,8 @@ write.plot <- function(pp, path, height=7) {
 }
 
 plot.height <- function(n) {
-  0.472441+0.629921+n*0.25
+  # 0.472441+0.629921+n*0.25
+  0.472441+n*0.21
 }
 
 plot.height.col <- function(c) {
@@ -299,9 +300,9 @@ cat("[Repoid showing more different features: ", df.repo.distinct[1,]$repoid, "]
 
 labs.instances <- labs(x=NULL, y = "# Instances")
 scale.scope <- scale_fill_discrete(
-    name="Scope",
+    name="",
     breaks=c("src", "test", "gen"),
-    labels=c("Application/Library code", "Test code", "Generated code")
+    labels=c("App/Lib code", "Test code", "Generated code")
     )
 
 for (pname in levels(as.factor(df$pattern))) {
@@ -310,7 +311,7 @@ for (pname in levels(as.factor(df$pattern))) {
     geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
     geom_text(stat='count', aes(label=..count..,y=..count..+3))+
     coord_flip()+
-    theme(legend.position="top")+
+    theme(legend.position="right")+
     labs.instances+scale.scope
   write.plot(pp, sprintf('patterns/table-pattern-%s-features.pdf', pname), plot.height.col(x$features))
   
@@ -330,7 +331,7 @@ for (pname in levels(as.factor(df$pattern))) {
       geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
       geom_text(stat='count', aes(label=..count..,y=..count..+3))+
       coord_flip()+
-      theme(legend.position="top")+
+      theme(legend.position="right")+
       labs.instances+scale.scope
     write.plot(pp, sprintf('patterns/table-pattern-%s-%s-args.pdf', pname, subp), plot.height.col(y$args))
   }
@@ -364,11 +365,16 @@ write(table.def, 'table-casts-patterns.def')
 write(input.patterns.def, 'input-patterns.def')
 write(table.categories.def, 'table-casts-categories.def')
 
+scale.scope <- scale_fill_discrete(
+    name="Scope",
+    breaks=c("src", "test", "gen"),
+    labels=c("App/Lib code", "Test code", "Generated code")
+    )
 pp <- ggplot(df, aes(x=pattern))+
   geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
   geom_text(stat='count', aes(label=..count..,y=..count..+3))+
   coord_flip()+
-  theme(strip.text.y=element_text(angle = 0), legend.position="top")+
+  theme(strip.text.y=element_text(angle = 0), legend.position="right")+
   labs.instances+scale.scope
 write.plot(pp, 'table-patterns.pdf', plot.height.col(df$pattern))
 
