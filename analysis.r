@@ -213,7 +213,8 @@ write.plot <- function(pp, path, height=7) {
 
 plot.height <- function(n) {
   # 0.472441+0.629921+n*0.25
-  0.472441+n*0.21
+  # 0.472441+n*0.21
+  0.3+n*0.21
 }
 
 plot.height.col <- function(c) {
@@ -298,7 +299,8 @@ df.repo.distinct <- dcast(df.repo, repoid~'count', length, value.var="features")
 df.repo.distinct <- df.repo.distinct[order(df.repo.distinct$count, decreasing=TRUE),]
 cat("[Repoid showing more different features: ", df.repo.distinct[1,]$repoid, "]", sep='', fill=TRUE)
 
-labs.instances <- labs(x=NULL, y = "# Instances")
+# labs.instances <- labs(x=NULL, y = "# Instances")
+labs.instances <- labs(x = NULL, y = NULL)
 scale.scope <- scale_fill_discrete(
     name="",
     breaks=c("src", "test", "gen"),
