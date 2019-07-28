@@ -1,11 +1,12 @@
 
 dist:
 	R --vanilla --slave --file=dist.r
+	find . -name "dist-*.pdf" -exec sed -i '' '5,6d' {} \;
 
 analysis:
 	R --vanilla --slave --file=analysis.r
 	sed -i '' '5,6d' table-patterns.pdf
-	find ./patterns -name "*.pdf" -exec sed -i '' '5,6d' {} \; 
+	find ./patterns -name "*.pdf" -exec sed -i '' '5,6d' {} \;
 
 sample:
 	R --vanilla --slave --file=sample.r
