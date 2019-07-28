@@ -401,16 +401,16 @@ write(table.categories.def, 'table-casts-categories.def')
 scale.scope <- scale_fill_discrete(
     name="Scope",
     breaks=c("src", "test", "gen"),
-    labels=c("App/Lib code", "Test code", "Generated code")
+    labels=c("Application/Library code", "Test code", "Generated code")
     )
 pp <- ggplot(df, aes(x=pattern))+
   geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
   geom_text(stat='count', aes(label=..count..,y=..count..+3))+
   coord_flip()+
   facet_grid(group~., scales='free', space='free')+
-  theme(strip.text.y=element_text(angle = 0), legend.position="right")+
+  theme(strip.text.y=element_text(angle = 0), legend.position="top")+
   labs.instances+scale.scope
-write.plot(pp, 'table-patterns.pdf', plot.height.col(df$pattern))
+write.plot(pp, 'table-patterns.pdf', plot.height.col(df$pattern)*1.2)
 
 lpatterns <- levels(as.factor(df$pattern))
 patterns.def['Pattern'] = length(lpatterns)
