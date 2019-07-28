@@ -4,6 +4,8 @@ dist:
 
 analysis:
 	R --vanilla --slave --file=analysis.r
+	sed -i '' '5,6d' table-patterns.pdf
+	find ./patterns -name "*.pdf" -exec sed -i '' '5,6d' {} \; 
 
 sample:
 	R --vanilla --slave --file=sample.r

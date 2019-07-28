@@ -7,135 +7,162 @@ taxonomy = list(
   'Typecase' = list(
     'features' = c('GuardByInstanceOf', 'GuardByTypeTag', 'GuardByClassLiteral'),
     'categories' = c('guarded', 'lang', 'tools'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'Guarded'
   ),
   'Equals' = list(
     'features' = c('Equals'),
     'categories' = c('guarded', 'gen'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Guarded'
   ),
   'OperandStack' = list(
     'features' = c('OperandStack'),
     'categories' = c('guarded', 'lang'),
-    'ql' = '\\xmark'
+    'ql' = '\\xmark',
+    'group' = 'Guarded'
   ),
   'Family' = list(
     'features' = c('Family'),
     'categories' = c('lang'),
-    'ql' = '\\xmark'
+    'ql' = '\\xmark',
+    'group' = 'Covariance'
   ),
   'Factory' = list(
     'features' = c('Factory', 'GetOrCreateByClassLiteral'),
     'categories' = c('tools'),
-    'ql' = '\\xmark'
+    'ql' = '\\xmark',
+    'group' = 'API'
   ),
   'Deserialization' = list(
     'features' = c('Deserialization'),
     'categories' = c('tools'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'API'
   ),
   'Composite' = list(
     'features' = c('Composite'),
     'categories' = c('lang'),
-    'ql' = '\\xmark'
+    'ql' = '\\xmark',
+    'group' = 'API'
   ),
   'NewDynamicInstance' = list(
     'features' = c('NewDynamicInstance'),
     'categories' = c('tools'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'API'
   ),
   'Stash' = list(
     'features' = c('LookupById', 'Tag', 'StaticResource'),
     'categories' = c('tools', 'gen'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'API'
   ),
   'CovariantReturnType' = list(
     'features' = c('CovariantReturnType', 'Clone'),
     'categories' = c('lang'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'Covariance'
   ),
   'Redundant' = list(
     'features' = c('Redundant'),
     'categories' = c('dev'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Code Smell'
   ),
   'VariableSupertype' = list(
     'features' = c('VariableSupertype'),
     'categories' = c('dev'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'Code Smell'
   ),
   'UseRawType' = list(
     'features' = c('UseRawType'),
     'categories' = c('dev', 'generic', 'boxing'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Generics'
   ),
   'RemoveWildcard' = list(
     'features' = c('RemoveWildcard'),
     'categories' = c('lang', 'generic'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Generics'
   ),
   'KnownReturnType' = list(
     'features' = c('KnownReturnType'),
     'categories' = c('tools', 'dev'),
-    'ql' = '\\xmark'
+    'ql' = '\\xmark',
+    'group' = 'API'
   ),
   'ObjectAsArray' = list(
     'features' = c('ObjectAsArray'),
     'categories' = c('dev'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'Code Smell'
   ),
   'AccessSuperclassField' = list(
     'features' = c('AccessSuperclassField'),
     'categories' = c('dev'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Hack Types'
   ),
   'SelectOverload' = list(
     'features' = c('SelectOverload'),
     'categories' = c('lang', 'boxing'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Hack Types'
   ),
   'ReflectiveAccessibility' = list(
     'features' = c('ReflectiveAccessibility'),
     'categories' = c('lang', 'boxing'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Hack Types'
   ),
   'CovariantGeneric' = list(
     'features' = c('CovariantGeneric'),
     'categories' = c('lang', 'generic', 'boxing'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'Covariance'
   ),
   'SoleSubclassImplementation' = list(
     'features' = c('SoleSubclassImplementation'),
     'categories' = c('lang'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Hack Types'
   ),
   'FluentAPI' = list(
     'features' = c('FluentAPI'),
     'categories' = c('lang', 'generic'),
-    'ql' = '\\exis'
+    'ql' = '\\exis',
+    'group' = 'Covariance'
   ),
   'ImplicitIntersectionType' = list(
     'features' = c('ImplicitIntersectionType'),
     'categories' = c('lang'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Hack Types'
   ),
   'GenericArray' = list(
     'features' = c('GenericArray', 'MatchBoxedType'),
     'categories' = c('lang', 'generic', 'boxing'),
-    'ql' = '\\cmark'
+    'ql' = '\\cmark',
+    'group' = 'Generics'
   ),
   'UnoccupiedTypeParameter' = list(
     'features' = c('UnoccupiedTypeParameter'),
     'categories' = c('lang', 'generic'),
-    'ql' = '\\xmark'
+    'ql' = '\\xmark',
+    'group' = 'Generics'
   ),
   'Primitive' = list(
     'features' = c('Literal', 'Numeric'),
-    'categories' = c('lang')
+    'categories' = c('lang'),
+    'group' = '--remove--'
   ),
   'ToRemove' = list(
     'features' = c('Boxing', 'Unboxing', 'This'),
-    'categories' = c('lang')
+    'categories' = c('lang'),
+    'group' = '--remove--'
   )
   )
 
@@ -287,9 +314,13 @@ df$features <- substring(df$features, 2)
 df <- separate_rows(df, features, sep='#')
 df <- separate(df, features, c('features', 'args'), sep=':', fill='right')
 df$pattern <- NA
+df$group <- NA
 for (p in names(taxonomy)) {
   df[df$features %in% taxonomy[[p]]$features,]$pattern <- p
+  df[df$features %in% taxonomy[[p]]$features,]$group <- taxonomy[[p]]$group
 }
+df$group <- factor(df$group, levels=c('Guarded', 'API', 'Covariance', 'Generics', 'Hack Types', 'Code Smell'))
+
 stopifnot(empty(subset(df, is.na(pattern))))
 check.diff(declared.features, unique(df$features))
 
@@ -376,6 +407,7 @@ pp <- ggplot(df, aes(x=pattern))+
   geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
   geom_text(stat='count', aes(label=..count..,y=..count..+3))+
   coord_flip()+
+  facet_grid(group~., scales='free', space='free')+
   theme(strip.text.y=element_text(angle = 0), legend.position="right")+
   labs.instances+scale.scope
 write.plot(pp, 'table-patterns.pdf', plot.height.col(df$pattern))
