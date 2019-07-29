@@ -386,7 +386,7 @@ i <- 1
 for (p in names(tb[order(tb, decreasing = TRUE)])) {
   row.color <- if (i %% 2 == 0) '\\alt' else '\\row'
   table.def <- append(table.def, sprintf("%s & \\nameref{pat:%s} & \\%sDesc & \\n%sPattern & \\p%sPattern \\%% \\\\", i, p, p, p, p))
-  input.patterns.def <- append(input.patterns.def, sprintf("\\input{patterns/%s}", p))
+  input.patterns.def <- append(input.patterns.def, sprintf("\\includepattern{%s}", p))
   
   a <- declared.categories %in% taxonomy[[p]]$categories
   r <- paste(sapply(a, function(b) if (b) '\\cmark' else ''), collapse=' & ', sep=' & ')
