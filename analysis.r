@@ -16,7 +16,7 @@ taxonomy = list(
     'ql' = '\\cmark',
     'group' = 'Guarded'
   ),
-  'OperandStack' = list(
+  'ParserStack' = list(
     'features' = c('OperandStack'),
     'categories' = c('guarded', 'lang'),
     'ql' = '\\xmark',
@@ -380,20 +380,40 @@ tb <- table(df$pattern)
 df$pattern <- factor(df$pattern, levels=names(tb[order(tb, decreasing = FALSE)]))
 input.patterns.def <- c()
 table.def <- c()
+table.def <- append(table.def, sprintf("\\\\"))
 table.categories.def <- c()
-i <- 1 
+i <- 1
 #for (p in levels(df$pattern)) {
-for (p in names(tb[order(tb, decreasing = TRUE)])) {
-  row.color <- if (i %% 2 == 0) '\\alt' else '\\row'
-  table.def <- append(table.def, sprintf("%s & \\nameref{pat:%s} & \\%sDesc & \\n%sPattern & \\p%sPattern \\%% \\\\", i, p, p, p, p))
-  input.patterns.def <- append(input.patterns.def, sprintf("\\includepattern{%s}", p))
-  
-  a <- declared.categories %in% taxonomy[[p]]$categories
-  r <- paste(sapply(a, function(b) if (b) '\\cmark' else ''), collapse=' & ', sep=' & ')
-  r <- sprintf("%s & %s", r, taxonomy[[p]]$ql)
-  table.categories.def <- append(table.categories.def, sprintf("%s \\nameref{pat:%s} & %s \\\\", row.color, p, r))
-  i = i+1
+# for (p in names(tb[order(tb, decreasing = TRUE)])) {
+#   row.color <- if (i %% 2 == 0) '\\alt' else '\\row'
+#   table.def <- append(table.def, sprintf("%s & \\nameref{pat:%s} & \\%sDesc & \\n%sPattern & \\p%sPattern \\%% \\\\", i, p, p, p, p))
+#   input.patterns.def <- append(input.patterns.def, sprintf("\\includepattern{%s}", p))
+#   
+#   a <- declared.categories %in% taxonomy[[p]]$categories
+#   r <- paste(sapply(a, function(b) if (b) '\\cmark' else ''), collapse=' & ', sep=' & ')
+#   r <- sprintf("%s & %s", r, taxonomy[[p]]$ql)
+#   table.categories.def <- append(table.categories.def, sprintf("%s \\nameref{pat:%s} & %s \\\\", row.color, p, r))
+#   i = i+1
+# }
+for (g in levels(df$group)) {
+  gk <- gsub(" ", "", g)
+  input.patterns.def <- append(input.patterns.def, sprintf("\\includegroup{%s}{\\g%sDesc}", g, gk))
+  table.def <- append(table.def, sprintf("\\hline \\alt & \\multicolumn{4}{l|}{%s Group. \\g%sTableDesc} \\\\", g, gk))
+  tb <- table(droplevels(df[df$group %in% g,]$pattern))
+  ps <- names(tb[order(tb, decreasing = TRUE)])
+  for (p in ps) {
+    row.color <- if (i %% 2 == 0) '\\alt' else '\\row'
+    table.def <- append(table.def, sprintf("%s & \\nameref{pat:%s} & \\%sDesc & \\n%sPattern & \\p%sPattern \\%% \\\\", i, p, p, p, p))
+    input.patterns.def <- append(input.patterns.def, sprintf("\\includepattern{%s}", p))
+   
+    a <- declared.categories %in% taxonomy[[p]]$categories
+    r <- paste(sapply(a, function(b) if (b) '\\cmark' else ''), collapse=' & ', sep=' & ')
+    r <- sprintf("%s & %s", r, taxonomy[[p]]$ql)
+    table.categories.def <- append(table.categories.def, sprintf("%s \\nameref{pat:%s} & %s \\\\", row.color, p, r))
+    i = i+1
+  }
 }
+
 write(table.def, 'table-casts-patterns.def')
 write(input.patterns.def, 'input-patterns.def')
 write(table.categories.def, 'table-casts-categories.def')
@@ -415,7 +435,7 @@ write.plot(pp, 'table-patterns.pdf', plot.height.col(df$pattern)*1.2)
 lpatterns <- levels(as.factor(df$pattern))
 patterns.def['Pattern'] = length(lpatterns)
 
-df.guarded <- df[which(df$pattern %in% c('Typecase', 'Equals', 'OperandStack')),]
+df.guarded <- df[which(df$pattern %in% c('Typecase', 'Equals', 'ParserStack')),]
 df.upcast <- rbind(
   df[which(df$pattern=='SelectOverload'),],
   df[which(df$pattern=='CovariantGeneric' & df$args=='Upcast'),],
