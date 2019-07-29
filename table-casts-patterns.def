@@ -1,25 +1,32 @@
+\\
+\hline \alt & \multicolumn{4}{l|}{Guarded Group. \gGuardedTableDesc} \\
 1 & \nameref{pat:Typecase} & \TypecaseDesc & \nTypecasePattern & \pTypecasePattern \% \\
-2 & \nameref{pat:Stash} & \StashDesc & \nStashPattern & \pStashPattern \% \\
-3 & \nameref{pat:Factory} & \FactoryDesc & \nFactoryPattern & \pFactoryPattern \% \\
-4 & \nameref{pat:Family} & \FamilyDesc & \nFamilyPattern & \pFamilyPattern \% \\
-5 & \nameref{pat:UseRawType} & \UseRawTypeDesc & \nUseRawTypePattern & \pUseRawTypePattern \% \\
-6 & \nameref{pat:Equals} & \EqualsDesc & \nEqualsPattern & \pEqualsPattern \% \\
-7 & \nameref{pat:Redundant} & \RedundantDesc & \nRedundantPattern & \pRedundantPattern \% \\
-8 & \nameref{pat:CovariantReturnType} & \CovariantReturnTypeDesc & \nCovariantReturnTypePattern & \pCovariantReturnTypePattern \% \\
-9 & \nameref{pat:SelectOverload} & \SelectOverloadDesc & \nSelectOverloadPattern & \pSelectOverloadPattern \% \\
-10 & \nameref{pat:KnownReturnType} & \KnownReturnTypeDesc & \nKnownReturnTypePattern & \pKnownReturnTypePattern \% \\
-11 & \nameref{pat:Deserialization} & \DeserializationDesc & \nDeserializationPattern & \pDeserializationPattern \% \\
-12 & \nameref{pat:VariableSupertype} & \VariableSupertypeDesc & \nVariableSupertypePattern & \pVariableSupertypePattern \% \\
-13 & \nameref{pat:SoleSubclassImplementation} & \SoleSubclassImplementationDesc & \nSoleSubclassImplementationPattern & \pSoleSubclassImplementationPattern \% \\
-14 & \nameref{pat:NewDynamicInstance} & \NewDynamicInstanceDesc & \nNewDynamicInstancePattern & \pNewDynamicInstancePattern \% \\
-15 & \nameref{pat:ObjectAsArray} & \ObjectAsArrayDesc & \nObjectAsArrayPattern & \pObjectAsArrayPattern \% \\
-16 & \nameref{pat:ImplicitIntersectionType} & \ImplicitIntersectionTypeDesc & \nImplicitIntersectionTypePattern & \pImplicitIntersectionTypePattern \% \\
-17 & \nameref{pat:RemoveWildcard} & \RemoveWildcardDesc & \nRemoveWildcardPattern & \pRemoveWildcardPattern \% \\
-18 & \nameref{pat:OperandStack} & \OperandStackDesc & \nOperandStackPattern & \pOperandStackPattern \% \\
-19 & \nameref{pat:ReflectiveAccessibility} & \ReflectiveAccessibilityDesc & \nReflectiveAccessibilityPattern & \pReflectiveAccessibilityPattern \% \\
-20 & \nameref{pat:FluentAPI} & \FluentAPIDesc & \nFluentAPIPattern & \pFluentAPIPattern \% \\
-21 & \nameref{pat:CovariantGeneric} & \CovariantGenericDesc & \nCovariantGenericPattern & \pCovariantGenericPattern \% \\
-22 & \nameref{pat:Composite} & \CompositeDesc & \nCompositePattern & \pCompositePattern \% \\
-23 & \nameref{pat:GenericArray} & \GenericArrayDesc & \nGenericArrayPattern & \pGenericArrayPattern \% \\
-24 & \nameref{pat:AccessSuperclassField} & \AccessSuperclassFieldDesc & \nAccessSuperclassFieldPattern & \pAccessSuperclassFieldPattern \% \\
-25 & \nameref{pat:UnoccupiedTypeParameter} & \UnoccupiedTypeParameterDesc & \nUnoccupiedTypeParameterPattern & \pUnoccupiedTypeParameterPattern \% \\
+2 & \nameref{pat:Equals} & \EqualsDesc & \nEqualsPattern & \pEqualsPattern \% \\
+3 & \nameref{pat:ParserStack} & \ParserStackDesc & \nParserStackPattern & \pParserStackPattern \% \\
+\hline \alt & \multicolumn{4}{l|}{API Group. \gAPITableDesc} \\
+4 & \nameref{pat:Stash} & \StashDesc & \nStashPattern & \pStashPattern \% \\
+5 & \nameref{pat:Factory} & \FactoryDesc & \nFactoryPattern & \pFactoryPattern \% \\
+6 & \nameref{pat:KnownReturnType} & \KnownReturnTypeDesc & \nKnownReturnTypePattern & \pKnownReturnTypePattern \% \\
+7 & \nameref{pat:Deserialization} & \DeserializationDesc & \nDeserializationPattern & \pDeserializationPattern \% \\
+8 & \nameref{pat:NewDynamicInstance} & \NewDynamicInstanceDesc & \nNewDynamicInstancePattern & \pNewDynamicInstancePattern \% \\
+9 & \nameref{pat:Composite} & \CompositeDesc & \nCompositePattern & \pCompositePattern \% \\
+\hline \alt & \multicolumn{4}{l|}{Covariance Group. \gCovarianceTableDesc} \\
+10 & \nameref{pat:Family} & \FamilyDesc & \nFamilyPattern & \pFamilyPattern \% \\
+11 & \nameref{pat:CovariantReturnType} & \CovariantReturnTypeDesc & \nCovariantReturnTypePattern & \pCovariantReturnTypePattern \% \\
+12 & \nameref{pat:FluentAPI} & \FluentAPIDesc & \nFluentAPIPattern & \pFluentAPIPattern \% \\
+13 & \nameref{pat:CovariantGeneric} & \CovariantGenericDesc & \nCovariantGenericPattern & \pCovariantGenericPattern \% \\
+\hline \alt & \multicolumn{4}{l|}{Generics Group. \gGenericsTableDesc} \\
+14 & \nameref{pat:UseRawType} & \UseRawTypeDesc & \nUseRawTypePattern & \pUseRawTypePattern \% \\
+15 & \nameref{pat:RemoveWildcard} & \RemoveWildcardDesc & \nRemoveWildcardPattern & \pRemoveWildcardPattern \% \\
+16 & \nameref{pat:GenericArray} & \GenericArrayDesc & \nGenericArrayPattern & \pGenericArrayPattern \% \\
+17 & \nameref{pat:UnoccupiedTypeParameter} & \UnoccupiedTypeParameterDesc & \nUnoccupiedTypeParameterPattern & \pUnoccupiedTypeParameterPattern \% \\
+\hline \alt & \multicolumn{4}{l|}{Hack Types Group. \gHackTypesTableDesc} \\
+18 & \nameref{pat:SelectOverload} & \SelectOverloadDesc & \nSelectOverloadPattern & \pSelectOverloadPattern \% \\
+19 & \nameref{pat:SoleSubclassImplementation} & \SoleSubclassImplementationDesc & \nSoleSubclassImplementationPattern & \pSoleSubclassImplementationPattern \% \\
+20 & \nameref{pat:ImplicitIntersectionType} & \ImplicitIntersectionTypeDesc & \nImplicitIntersectionTypePattern & \pImplicitIntersectionTypePattern \% \\
+21 & \nameref{pat:ReflectiveAccessibility} & \ReflectiveAccessibilityDesc & \nReflectiveAccessibilityPattern & \pReflectiveAccessibilityPattern \% \\
+22 & \nameref{pat:AccessSuperclassField} & \AccessSuperclassFieldDesc & \nAccessSuperclassFieldPattern & \pAccessSuperclassFieldPattern \% \\
+\hline \alt & \multicolumn{4}{l|}{Code Smell Group. \gCodeSmellTableDesc} \\
+23 & \nameref{pat:Redundant} & \RedundantDesc & \nRedundantPattern & \pRedundantPattern \% \\
+24 & \nameref{pat:VariableSupertype} & \VariableSupertypeDesc & \nVariableSupertypePattern & \pVariableSupertypePattern \% \\
+25 & \nameref{pat:ObjectAsArray} & \ObjectAsArrayDesc & \nObjectAsArrayPattern & \pObjectAsArrayPattern \% \\
