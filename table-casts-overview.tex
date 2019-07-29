@@ -1,0 +1,29 @@
+\begin{table*}[ht]
+\footnotesize
+\centering
+\caption{Statistics on Sampled Casts}
+\label{table:casts:guarded}
+\begin{tabular}{|l|r|r|}
+    \hline
+    All sampled casts & \nSize{} & 100\% \\
+    \hline
+    Reference casts & \nReference{} & \pReference\% \\
+    Primitive casts & \nPrimitivePattern{} & \pPrimitivePattern\% \\
+    \hline
+    Upcasts & \nUpcast{} & \pUpcast\% \\
+    Downcasts & \nDowncast{} & \pDowncast\% \\
+    \hline
+    Boxing casts & \nToRemoveBoxingSubpattern{} & \pToRemoveBoxingSubpattern\% \\
+    Unboxing casts & \nToRemoveUnboxingSubpattern{} & \pToRemoveUnboxingSubpattern\% \\
+    \hline
+    Guarded by \code{instanceof} & \nTypecaseGuardByInstanceOfSubpattern{} & \pTypecaseGuardByInstanceOfSubpattern\% \\
+    Guarded by \code{getClass} & \nTypecaseGuardByClassLiteralSubpattern{} & \pTypecaseGuardByClassLiteralSubpattern\% \\
+    Guarded by type tag & \nTypecaseGuardByTypeTagSubpattern{} & \pTypecaseGuardByTypeTagSubpattern\% \\
+    Unguarded or possibly unguarded & \nUnguarded{} & \pUnguarded\% \\
+    \hline
+    In application/library code & \nPatternSrc{} & \pPatternSrc\% \\
+    In test code & \nPatternTest{} & \pPatternTest\% \\
+    In generated code & \nPatternGen{} & \pPatternGen\% \\
+    \hline
+\end{tabular}
+\end{table*}
