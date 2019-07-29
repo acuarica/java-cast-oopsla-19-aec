@@ -340,6 +340,8 @@ scale.scope <- scale_fill_discrete(
 
 for (pname in levels(as.factor(df$pattern))) {
   x <- df[df$pattern==pname,]
+  tb <- table(x$features)
+  x$features <- factor(x$features, levels=names(tb[order(tb, decreasing=FALSE)]))
   pp <- ggplot(x, aes(x=features))+
     geom_bar(aes(fill=scope), position=position_stack(reverse = TRUE))+
     geom_text(stat='count', aes(label=..count..,y=..count..+3))+
