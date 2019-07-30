@@ -20,7 +20,7 @@ stats.raw$value <- as.numeric(stats.raw$value)
 stats.project <- dcast(stats.raw, project~stat)
 stats.project$ratio <- stats.project$MethodWithCast/stats.project$Method
 
-pdf('stats-methodwcastXproject.pdf', height = 1.4)
+pdf('stats-methodwcastXproject.pdf', height = 1.35)
 ggplot(stats.project, aes(x="", y=ratio))+
   geom_boxplot(outlier.shape=NA)+
   geom_jitter(aes(size=Method))+
