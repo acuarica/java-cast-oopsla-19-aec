@@ -8,6 +8,14 @@ analysis:
 	sed -i '' '5,6d' table-patterns.pdf
 	find ./patterns -name "*.pdf" -exec sed -i '' '5,6d' {} \;
 
+
+stats:
+	R --vanilla --slave --file=stats.r
+	find . -name "stats-*.pdf" -exec sed -i '' '5,6d' {} \;
+
+stats-merge:
+	python stats-merge.py stats-results
+
 sample:
 	R --vanilla --slave --file=sample.r
 
