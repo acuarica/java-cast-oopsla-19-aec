@@ -6,7 +6,7 @@ library(ggplot2)
 
 write.plot <- function(pp, path) {
   cat("[Writing plot '", path, "']\n", sep='')
-  pdf(path, height=4)
+  pdf(path, height=2)
   print(pp)
   dev.off()
 }
@@ -22,19 +22,15 @@ df.count <- merge(df.1 ,df.2, all=TRUE)
 csv <- read.csv('casts.csv')
 csv.count <- dcast(csv, repoid~'nocasts', length, value.var='castid')
 
-labs <- labs(x="No. of Casts", y="Empirical Cumulative Density of no. of projects")
-labs.log <- labs(x="No. of Casts (log scale)", y="Empirical Cumulative Density of no. of projects")
+df.subset <- df.count[df.count$repoid %in% csv.count$repoid,]
+
+labs <- labs(x="No. of Casts (log scale)", y="Empirical Cumulative\nDensity of Projects")
  
-pp <- ggplot(df.count, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+labs
-write.plot(pp, 'dist-population.pdf')
-pp <- ggplot(df.count, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+scale_x_log10()+labs.log
+pp <- ggplot(df.count, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+scale_x_log10()+labs
 write.plot(pp, 'dist-population-log.pdf')
 
-df.100 <- df.count[df.count$nocasts >= 100,]
-pp <- ggplot(df.100, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+scale_x_log10()+labs.log
-write.plot(pp, 'dist-population-over-100-log.pdf')
-
-pp <- ggplot(csv.count, aes(nocasts))+stat_ecdf(geom="point", size=0.5)+labs
-write.plot(pp, 'dist-sample.pdf')
-pp <- ggplot(csv.count, aes(nocasts))+stat_ecdf(geom="point", size=0.5)+scale_x_log10()+labs.log
+pp <- ggplot(csv.count, aes(nocasts))+stat_ecdf(geom="point", size=0.5)+scale_x_log10()+labs
 write.plot(pp, 'dist-sample-log.pdf')
+
+pp <- ggplot(df.subset, aes(nocasts))+stat_ecdf(geom="point", size=0.1)+scale_x_log10()+labs
+write.plot(pp, 'dist-subset-log.pdf')
