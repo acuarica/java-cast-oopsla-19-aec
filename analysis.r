@@ -385,18 +385,6 @@ table.def <- c()
 table.def <- append(table.def, sprintf("\\\\"))
 table.categories.def <- c()
 i <- 1
-#for (p in levels(df$pattern)) {
-# for (p in names(tb[order(tb, decreasing = TRUE)])) {
-#   row.color <- if (i %% 2 == 0) '\\alt' else '\\row'
-#   table.def <- append(table.def, sprintf("%s & \\nameref{pat:%s} & \\%sDesc & \\n%sPattern & \\p%sPattern \\%% \\\\", i, p, p, p, p))
-#   input.patterns.def <- append(input.patterns.def, sprintf("\\includepattern{%s}", p))
-#   
-#   a <- declared.categories %in% taxonomy[[p]]$categories
-#   r <- paste(sapply(a, function(b) if (b) '\\cmark' else ''), collapse=' & ', sep=' & ')
-#   r <- sprintf("%s & %s", r, taxonomy[[p]]$ql)
-#   table.categories.def <- append(table.categories.def, sprintf("%s \\nameref{pat:%s} & %s \\\\", row.color, p, r))
-#   i = i+1
-# }
 for (g in levels(df$group)) {
   gk <- gsub(" ", "", g)
   input.patterns.def <- append(input.patterns.def, sprintf("\\includegroup{%s}{\\g%sDesc}", g, gk))
@@ -406,7 +394,7 @@ for (g in levels(df$group)) {
   for (p in ps) {
     row.color <- if (i %% 2 == 0) '\\alt' else '\\row'
     table.def <- append(table.def, sprintf("%s & \\nameref{pat:%s} & \\%sDesc & \\n%sPattern & \\p%sPattern \\%% \\\\", i, p, p, p, p))
-    input.patterns.def <- append(input.patterns.def, sprintf("\\includepattern{%s}", p))
+    input.patterns.def <- append(input.patterns.def, sprintf("\\input{patterns/%s}", p))
    
     a <- declared.categories %in% taxonomy[[p]]$categories
     r <- paste(sapply(a, function(b) if (b) '\\cmark' else ''), collapse=' & ', sep=' & ')
