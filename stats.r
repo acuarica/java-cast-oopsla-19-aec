@@ -14,6 +14,12 @@ writeDef <- function(defPath, values) {
   close(f)
 }
 
+
+qr.db = dbConnect(SQLite(), dbname="output.sqlite3")
+reposid = dbGetQuery(qr.db, "select * from repos")
+df = dbGetQuery(qr.db, "select repoid, count(*) as nocasts from casts where link!='' group by repoid")
+
+
 stats.raw <- dbReadObs("stats-results/.output.sqlite3")
 
 stats.raw$value <- as.numeric(stats.raw$value)
