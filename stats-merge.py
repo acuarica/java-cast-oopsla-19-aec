@@ -25,8 +25,17 @@ cols = []
 
 def main(path):
     print "Importing", path,
-    filename = os.path.basename(path)
-    project, _ = os.path.splitext(filename)
+
+    # filename = os.path.basename(path)
+    # project, _ = os.path.splitext(filename)
+
+    parts = path.split('/')
+    assert parts[0] == "stats-results", parts[0]
+    host = parts[1]
+    user = parts[2]
+    repo = parts[3]
+    assert parts[4] == "output.csv", parts[4]
+    project = user + '/' + repo + '@' + host
 
     with open(path) as f:
         csvf = csv.reader(f, delimiter=',', quotechar="\"")
@@ -58,7 +67,7 @@ def main(path):
 
     conn.commit()
 
-for path in glob.iglob(dir + '/*.csv'):
+for path in glob.iglob(dir + '/*/*/*/output.csv'):
     main(path)
     stats.nprojects += 1
 
