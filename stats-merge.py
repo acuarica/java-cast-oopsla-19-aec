@@ -63,6 +63,7 @@ def main(path):
             
             nrows += 1
 
+        assert nrows == 8
         print "[Rows imported " + str(nrows - 1) + "]"
 
     conn.commit()
