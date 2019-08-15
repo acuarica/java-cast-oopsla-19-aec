@@ -33,14 +33,17 @@ we decided that a source code control repository would be a more appropriate to 
 The root folder contains the following files:
 
 * `Makefile`: The Makefile script to run all commands described in the *Step by Step Instructions*.
-* `query-results.tar.xz` and `query-results.json`: This is the dataset provided directly by Semmle. The `query-results.tar.xz` can be found [online](https://drive.google.com/a/semmle.com/file/d/1Wo7cfA5_nwml4lqrZWMhTWY7W8a-Xq_6/view?usp=drive_web).
+* `query-results.tar.xz` and `query-results.json`: This dataset was provided directly by Semmle. This is dataset which we took the sample from. This dataset is used sections 3 and 4 of the paper. The `query-results.tar.xz` can be found [online](https://drive.google.com/a/semmle.com/file/d/1Wo7cfA5_nwml4lqrZWMhTWY7W8a-Xq_6/view?usp=drive_web).
+* `stats-results.tar.xz`: This dataset was provided by Semmle as well. This data is used in Section 2.2 of the paper to show if the cast operator is used.
 * `casts-*.csv`: The cast samples that have been manually inspected.
 * `casts.csv`: Consolidated casts from `casts-*.csv`.
 * `import.py`: Script to extract the cast instances into a SQLite database.
 * `sample.r`: Script to create a sample from the cast database.
-* `analysis.r`: Main script to make tables and plots.
-* `dist.r`: Script to make the cast distribution plots.
+* `analysis.r`: Main script to make tables and plots (Sections 3 and 4).
+* `dist.r`: Script to make the cast distribution plots (Section 2.3).
+* `stats.r`: Script to make the operator usage plot (Section 2.2).
 * `casts.def`: Statistics about patterns.
+* `stats.def`: Statistics about cast usage across all projects.
 * `input-patterns.def`: LaTeX include file to include each pattern sorted by frequency.
 * `table-casts-patterns.def`: Patterns table where patterns are sorted by frequency.
 * `table-patterns.pdf` and `patterns/*.pdf`: Generated plots by `analysis.r`.
