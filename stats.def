@@ -1,8 +1,8 @@
-\newcommand{\nproject}{11,687}
-\newcommand{\nloc}{289,438,993}
-\newcommand{\nexpr}{1,009,452,278}
-\newcommand{\nstmt}{208,162,763}
-\newcommand{\ncast}{4,151,672}
-\newcommand{\nmethod}{22,189,917}
-\newcommand{\nmethodwithcast}{1,938,421}
-\newcommand{\castpercentage}{6.75}
+\newcommand{\nproject}{13,220}
+\newcommand{\nloc}{316,793,823}
+\newcommand{\nexpr}{1,097,998,050}
+\newcommand{\nstmt}{226,845,682}
+\newcommand{\ncast}{4,527,247}
+\newcommand{\nmethod}{24,559,050}
+\newcommand{\nmethodwithcast}{2,139,582}
+\newcommand{\castpercentage}{6.71}
