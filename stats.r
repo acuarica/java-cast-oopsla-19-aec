@@ -44,24 +44,24 @@ values <- c(
 writeDef('stats.def', values)
 
 
-# qr.db = dbConnect(SQLite(), dbname="output.sqlite3")
-# casts.table = dbReadTable(qr.db, "casts")
-# repos.table = dbReadTable(qr.db, "repos")
-# casts.with.link = casts.table[casts.table$link != '',]
-# casts.no.link = casts.table[casts.table$link == '',]
-# 
-# if (nrow(casts.table)!=nrow(casts.with.link)+nrow(casts.no.link)) stop("Casts with/without link mismatch")
-# 
-# repos.with.casts = unique(casts.with.link$repoid)
-# repos.no.link = unique(casts.no.link$repoid)
-# repos.no.casts = setdiff(repos.table$repoid, repos.with.casts)
-# 
-# repos.sum = dcast(casts.with.link, repoid~'nocasts', length)
-# df <- merge(repos.table, repos.sum, by='repoid', all=TRUE)
-# df$internalid <- NULL
-# df$project <- paste(df$user, '/', df$repo, '@', df$host, sep='')
-# df <- merge(stats.project, df, all=TRUE)
-# df[is.na(df$Cast),]$Cast = 0
-# df[is.na(df$nocasts),]$nocasts = 0
-# df$diff <- df$nocasts - df$Cast
-# sum(df$diff)
+qr.db = dbConnect(SQLite(), dbname="output.sqlite3")
+casts.table = dbReadTable(qr.db, "casts")
+repos.table = dbReadTable(qr.db, "repos")
+casts.with.link = casts.table[casts.table$link != '',]
+casts.no.link = casts.table[casts.table$link == '',]
+
+if (nrow(casts.table)!=nrow(casts.with.link)+nrow(casts.no.link)) stop("Casts with/without link mismatch")
+
+repos.with.casts = unique(casts.with.link$repoid)
+repos.no.link = unique(casts.no.link$repoid)
+repos.no.casts = setdiff(repos.table$repoid, repos.with.casts)
+
+repos.sum = dcast(casts.with.link, repoid~'nocasts', length)
+df <- merge(repos.table, repos.sum, by='repoid', all=TRUE)
+df$internalid <- NULL
+df$project <- paste(df$user, '/', df$repo, '@', df$host, sep='')
+df <- merge(stats.project, df, all=TRUE)
+df[is.na(df$Cast),]$Cast = 0
+df[is.na(df$nocasts),]$nocasts = 0
+df$diff <- df$nocasts - df$Cast
+sum(df$diff)
