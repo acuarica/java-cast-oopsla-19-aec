@@ -20,7 +20,7 @@
 15 & \nameref{pat:RemoveWildcard} & \RemoveWildcardDesc & \nRemoveWildcardPattern & \pRemoveWildcardPattern \% \\
 16 & \nameref{pat:GenericArray} & \GenericArrayDesc & \nGenericArrayPattern & \pGenericArrayPattern \% \\
 17 & \nameref{pat:UnoccupiedTypeParameter} & \UnoccupiedTypeParameterDesc & \nUnoccupiedTypeParameterPattern & \pUnoccupiedTypeParameterPattern \% \\
-\hline \alt & \multicolumn{4}{l|}{Hack Types Group. \gHackTypesTableDesc} \\
+\hline \alt & \multicolumn{4}{l|}{Type Hacking Group. \gTypeHackingTableDesc} \\
 18 & \nameref{pat:SelectOverload} & \SelectOverloadDesc & \nSelectOverloadPattern & \pSelectOverloadPattern \% \\
 19 & \nameref{pat:SoleSubclassImplementation} & \SoleSubclassImplementationDesc & \nSoleSubclassImplementationPattern & \pSoleSubclassImplementationPattern \% \\
 20 & \nameref{pat:ImplicitIntersectionType} & \ImplicitIntersectionTypeDesc & \nImplicitIntersectionTypePattern & \pImplicitIntersectionTypePattern \% \\

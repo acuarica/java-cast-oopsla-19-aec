@@ -104,19 +104,19 @@ taxonomy = list(
     'features' = c('AccessSuperclassField'),
     'categories' = c('dev'),
     'ql' = '\\cmark',
-    'group' = 'Hack Types'
+    'group' = 'Type Hacking'
   ),
   'SelectOverload' = list(
     'features' = c('SelectOverload'),
     'categories' = c('lang', 'boxing'),
     'ql' = '\\cmark',
-    'group' = 'Hack Types'
+    'group' = 'Type Hacking'
   ),
   'ReflectiveAccessibility' = list(
     'features' = c('ReflectiveAccessibility'),
     'categories' = c('lang', 'boxing'),
     'ql' = '\\cmark',
-    'group' = 'Hack Types'
+    'group' = 'Type Hacking'
   ),
   'CovariantGeneric' = list(
     'features' = c('CovariantGeneric'),
@@ -128,7 +128,7 @@ taxonomy = list(
     'features' = c('SoleSubclassImplementation'),
     'categories' = c('lang'),
     'ql' = '\\cmark',
-    'group' = 'Hack Types'
+    'group' = 'Type Hacking'
   ),
   'FluentAPI' = list(
     'features' = c('FluentAPI'),
@@ -140,7 +140,7 @@ taxonomy = list(
     'features' = c('ImplicitIntersectionType'),
     'categories' = c('lang'),
     'ql' = '\\cmark',
-    'group' = 'Hack Types'
+    'group' = 'Type Hacking'
   ),
   'GenericArray' = list(
     'features' = c('GenericArray', 'MatchBoxedType'),
@@ -319,7 +319,7 @@ for (p in names(taxonomy)) {
   df[df$features %in% taxonomy[[p]]$features,]$pattern <- p
   df[df$features %in% taxonomy[[p]]$features,]$group <- taxonomy[[p]]$group
 }
-df$group <- factor(df$group, levels=c('Guarded', 'API', 'Covariance', 'Generics', 'Hack Types', 'Code Smell'))
+df$group <- factor(df$group, levels=c('Guarded', 'API', 'Covariance', 'Generics', 'Type Hacking', 'Code Smell'))
 
 stopifnot(empty(subset(df, is.na(pattern))))
 check.diff(declared.features, unique(df$features))

@@ -19,7 +19,7 @@
 \input{patterns/RemoveWildcard}
 \input{patterns/GenericArray}
 \input{patterns/UnoccupiedTypeParameter}
-\includegroup{Hack Types}{\gHackTypesDesc}
+\includegroup{Type Hacking}{\gTypeHackingDesc}
 \input{patterns/SelectOverload}
 \input{patterns/SoleSubclassImplementation}
 \input{patterns/ImplicitIntersectionType}
