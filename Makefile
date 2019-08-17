@@ -21,6 +21,10 @@ sample:
 import:
 	python import.py
 
+untar-stats:
+	tar -vxzf stats-results.tar.xz
+	mv 1039023758015489199 stats-results
+
 untar:
 	tar -vxJf query-results.tar.xz
 
