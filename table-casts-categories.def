@@ -10,9 +10,9 @@
 \alt \nameref{pat:Family} &  & \cmark &  &  &  &  &  & \xmark \\
 \row \nameref{pat:CovariantReturnType} &  & \cmark &  &  &  &  &  & \exis \\
 \alt \nameref{pat:FluentAPI} &  & \cmark &  &  &  & \cmark &  & \exis \\
+\row \nameref{pat:UseRawType} &  &  &  &  & \cmark & \cmark & \cmark & \cmark \\
+\alt \nameref{pat:RemoveWildcard} &  & \cmark &  &  &  & \cmark &  & \cmark \\
 \row \nameref{pat:CovariantGeneric} &  & \cmark &  &  &  & \cmark & \cmark & \exis \\
-\alt \nameref{pat:UseRawType} &  &  &  &  & \cmark & \cmark & \cmark & \cmark \\
-\row \nameref{pat:RemoveWildcard} &  & \cmark &  &  &  & \cmark &  & \cmark \\
 \alt \nameref{pat:GenericArray} &  & \cmark &  &  &  & \cmark & \cmark & \cmark \\
 \row \nameref{pat:UnoccupiedTypeParameter} &  & \cmark &  &  &  & \cmark &  & \xmark \\
 \alt \nameref{pat:SelectOverload} &  & \cmark &  &  &  &  & \cmark & \cmark \\

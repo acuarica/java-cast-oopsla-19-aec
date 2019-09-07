@@ -122,7 +122,7 @@ taxonomy = list(
     'features' = c('CovariantGeneric'),
     'categories' = c('lang', 'generic', 'boxing'),
     'ql' = '\\exis',
-    'group' = 'Covariance'
+    'group' = 'Generics'
   ),
   'SoleSubclassImplementation' = list(
     'features' = c('SoleSubclassImplementation'),

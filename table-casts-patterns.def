@@ -14,10 +14,10 @@
 10 & \nameref{pat:Family} & \FamilyDesc & \nFamilyPattern & \pFamilyPattern \% \\
 11 & \nameref{pat:CovariantReturnType} & \CovariantReturnTypeDesc & \nCovariantReturnTypePattern & \pCovariantReturnTypePattern \% \\
 12 & \nameref{pat:FluentAPI} & \FluentAPIDesc & \nFluentAPIPattern & \pFluentAPIPattern \% \\
-13 & \nameref{pat:CovariantGeneric} & \CovariantGenericDesc & \nCovariantGenericPattern & \pCovariantGenericPattern \% \\
 \hline \alt & \multicolumn{4}{l|}{Generics Group. \gGenericsTableDesc} \\
-14 & \nameref{pat:UseRawType} & \UseRawTypeDesc & \nUseRawTypePattern & \pUseRawTypePattern \% \\
-15 & \nameref{pat:RemoveWildcard} & \RemoveWildcardDesc & \nRemoveWildcardPattern & \pRemoveWildcardPattern \% \\
+13 & \nameref{pat:UseRawType} & \UseRawTypeDesc & \nUseRawTypePattern & \pUseRawTypePattern \% \\
+14 & \nameref{pat:RemoveWildcard} & \RemoveWildcardDesc & \nRemoveWildcardPattern & \pRemoveWildcardPattern \% \\
+15 & \nameref{pat:CovariantGeneric} & \CovariantGenericDesc & \nCovariantGenericPattern & \pCovariantGenericPattern \% \\
 16 & \nameref{pat:GenericArray} & \GenericArrayDesc & \nGenericArrayPattern & \pGenericArrayPattern \% \\
 17 & \nameref{pat:UnoccupiedTypeParameter} & \UnoccupiedTypeParameterDesc & \nUnoccupiedTypeParameterPattern & \pUnoccupiedTypeParameterPattern \% \\
 \hline \alt & \multicolumn{4}{l|}{Type-Hacking Group. \gTypeHackingTableDesc} \\

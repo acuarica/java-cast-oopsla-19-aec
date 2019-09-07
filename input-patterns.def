@@ -13,10 +13,10 @@
 \input{patterns/Family}
 \input{patterns/CovariantReturnType}
 \input{patterns/FluentAPI}
-\input{patterns/CovariantGeneric}
 \includegroup{Generics}{\gGenericsDesc}
 \input{patterns/UseRawType}
 \input{patterns/RemoveWildcard}
+\input{patterns/CovariantGeneric}
 \input{patterns/GenericArray}
 \input{patterns/UnoccupiedTypeParameter}
 \includegroup{Type-Hacking}{\gTypeHackingDesc}
