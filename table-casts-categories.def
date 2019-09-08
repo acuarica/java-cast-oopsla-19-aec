@@ -13,13 +13,14 @@
 \row \nameref{pat:UseRawType} &  &  &  &  & \cmark & \cmark & \cmark & \cmark \\
 \alt \nameref{pat:RemoveWildcard} &  & \cmark &  &  &  & \cmark &  & \cmark \\
 \row \nameref{pat:CovariantGeneric} &  & \cmark &  &  &  & \cmark & \cmark & \exis \\
-\alt \nameref{pat:GenericArray} &  & \cmark &  &  &  & \cmark & \cmark & \cmark \\
-\row \nameref{pat:UnoccupiedTypeParameter} &  & \cmark &  &  &  & \cmark &  & \xmark \\
-\alt \nameref{pat:SelectOverload} &  & \cmark &  &  &  &  & \cmark & \cmark \\
-\row \nameref{pat:SoleSubclassImplementation} &  & \cmark &  &  &  &  &  & \cmark \\
-\alt \nameref{pat:ImplicitIntersectionType} &  & \cmark &  &  &  &  &  & \cmark \\
-\row \nameref{pat:ReflectiveAccessibility} &  & \cmark &  &  &  &  & \cmark & \cmark \\
-\alt \nameref{pat:AccessSuperclassField} &  &  &  &  & \cmark &  &  & \cmark \\
-\row \nameref{pat:Redundant} &  &  &  &  & \cmark &  &  & \cmark \\
-\alt \nameref{pat:VariableSupertype} &  &  &  &  & \cmark &  &  & \exis \\
-\row \nameref{pat:ObjectAsArray} &  &  &  &  & \cmark &  &  & \exis \\
+\alt \nameref{pat:SelectTypeArgument} &  & \cmark &  &  &  & \cmark & \cmark & \exis \\
+\row \nameref{pat:GenericArray} &  & \cmark &  &  &  & \cmark & \cmark & \cmark \\
+\alt \nameref{pat:UnoccupiedTypeParameter} &  & \cmark &  &  &  & \cmark &  & \xmark \\
+\row \nameref{pat:SelectOverload} &  & \cmark &  &  &  &  & \cmark & \cmark \\
+\alt \nameref{pat:SoleSubclassImplementation} &  & \cmark &  &  &  &  &  & \cmark \\
+\row \nameref{pat:ImplicitIntersectionType} &  & \cmark &  &  &  &  &  & \cmark \\
+\alt \nameref{pat:ReflectiveAccessibility} &  & \cmark &  &  &  &  & \cmark & \cmark \\
+\row \nameref{pat:AccessSuperclassField} &  &  &  &  & \cmark &  &  & \cmark \\
+\alt \nameref{pat:Redundant} &  &  &  &  & \cmark &  &  & \cmark \\
+\row \nameref{pat:VariableSupertype} &  &  &  &  & \cmark &  &  & \exis \\
+\alt \nameref{pat:ObjectAsArray} &  &  &  &  & \cmark &  &  & \exis \\

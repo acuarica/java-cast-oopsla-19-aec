@@ -18,15 +18,16 @@
 13 & \nameref{pat:UseRawType} & \UseRawTypeDesc & \nUseRawTypePattern & \pUseRawTypePattern \% \\
 14 & \nameref{pat:RemoveWildcard} & \RemoveWildcardDesc & \nRemoveWildcardPattern & \pRemoveWildcardPattern \% \\
 15 & \nameref{pat:CovariantGeneric} & \CovariantGenericDesc & \nCovariantGenericPattern & \pCovariantGenericPattern \% \\
-16 & \nameref{pat:GenericArray} & \GenericArrayDesc & \nGenericArrayPattern & \pGenericArrayPattern \% \\
-17 & \nameref{pat:UnoccupiedTypeParameter} & \UnoccupiedTypeParameterDesc & \nUnoccupiedTypeParameterPattern & \pUnoccupiedTypeParameterPattern \% \\
+16 & \nameref{pat:SelectTypeArgument} & \SelectTypeArgumentDesc & \nSelectTypeArgumentPattern & \pSelectTypeArgumentPattern \% \\
+17 & \nameref{pat:GenericArray} & \GenericArrayDesc & \nGenericArrayPattern & \pGenericArrayPattern \% \\
+18 & \nameref{pat:UnoccupiedTypeParameter} & \UnoccupiedTypeParameterDesc & \nUnoccupiedTypeParameterPattern & \pUnoccupiedTypeParameterPattern \% \\
 \hline \alt & \multicolumn{4}{l|}{Type-Hacking Group. \gTypeHackingTableDesc} \\
-18 & \nameref{pat:SelectOverload} & \SelectOverloadDesc & \nSelectOverloadPattern & \pSelectOverloadPattern \% \\
-19 & \nameref{pat:SoleSubclassImplementation} & \SoleSubclassImplementationDesc & \nSoleSubclassImplementationPattern & \pSoleSubclassImplementationPattern \% \\
-20 & \nameref{pat:ImplicitIntersectionType} & \ImplicitIntersectionTypeDesc & \nImplicitIntersectionTypePattern & \pImplicitIntersectionTypePattern \% \\
-21 & \nameref{pat:ReflectiveAccessibility} & \ReflectiveAccessibilityDesc & \nReflectiveAccessibilityPattern & \pReflectiveAccessibilityPattern \% \\
-22 & \nameref{pat:AccessSuperclassField} & \AccessSuperclassFieldDesc & \nAccessSuperclassFieldPattern & \pAccessSuperclassFieldPattern \% \\
+19 & \nameref{pat:SelectOverload} & \SelectOverloadDesc & \nSelectOverloadPattern & \pSelectOverloadPattern \% \\
+20 & \nameref{pat:SoleSubclassImplementation} & \SoleSubclassImplementationDesc & \nSoleSubclassImplementationPattern & \pSoleSubclassImplementationPattern \% \\
+21 & \nameref{pat:ImplicitIntersectionType} & \ImplicitIntersectionTypeDesc & \nImplicitIntersectionTypePattern & \pImplicitIntersectionTypePattern \% \\
+22 & \nameref{pat:ReflectiveAccessibility} & \ReflectiveAccessibilityDesc & \nReflectiveAccessibilityPattern & \pReflectiveAccessibilityPattern \% \\
+23 & \nameref{pat:AccessSuperclassField} & \AccessSuperclassFieldDesc & \nAccessSuperclassFieldPattern & \pAccessSuperclassFieldPattern \% \\
 \hline \alt & \multicolumn{4}{l|}{Code Smell Group. \gCodeSmellTableDesc} \\
-23 & \nameref{pat:Redundant} & \RedundantDesc & \nRedundantPattern & \pRedundantPattern \% \\
-24 & \nameref{pat:VariableSupertype} & \VariableSupertypeDesc & \nVariableSupertypePattern & \pVariableSupertypePattern \% \\
-25 & \nameref{pat:ObjectAsArray} & \ObjectAsArrayDesc & \nObjectAsArrayPattern & \pObjectAsArrayPattern \% \\
+24 & \nameref{pat:Redundant} & \RedundantDesc & \nRedundantPattern & \pRedundantPattern \% \\
+25 & \nameref{pat:VariableSupertype} & \VariableSupertypeDesc & \nVariableSupertypePattern & \pVariableSupertypePattern \% \\
+26 & \nameref{pat:ObjectAsArray} & \ObjectAsArrayDesc & \nObjectAsArrayPattern & \pObjectAsArrayPattern \% \\

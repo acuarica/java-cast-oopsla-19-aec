@@ -124,6 +124,12 @@ taxonomy = list(
     'ql' = '\\exis',
     'group' = 'Generics'
   ),
+  'SelectTypeArgument' = list(
+    'features' = c('SelectTypeArgument'),
+    'categories' = c('lang', 'generic', 'boxing'),
+    'ql' = '\\exis',
+    'group' = 'Generics'
+  ),
   'SoleSubclassImplementation' = list(
     'features' = c('SoleSubclassImplementation'),
     'categories' = c('lang'),
