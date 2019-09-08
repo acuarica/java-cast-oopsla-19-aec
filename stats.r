@@ -23,7 +23,7 @@ stats.project$ratio <- stats.project$MethodWithCast/stats.project$Method
 stats.project.outliers <- stats.project[stats.project$Method>0,]
 stats.project.outliers <- stats.project.outliers %>% mutate(outlier = ratio > quantile(ratio,.75)+IQR(ratio)*1.5)
 
-pdf('stats-methodwcastXproject.pdf', height = 2)
+pdf('stats-methodwcastXproject.pdf', height = 1.5)
 ggplot(stats.project.outliers, aes(x="", y=ratio))+
   geom_point(data = function(x) dplyr::filter_(x, ~ outlier), aes(size=CU,alpha=CU), position='jitter') +
   geom_violin() +
